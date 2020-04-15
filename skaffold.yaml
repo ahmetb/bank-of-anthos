@@ -48,3 +48,9 @@ deploy:
     # deploy a pre-build secret
     # in practice, this should not be checked in to source control
     - ./extras/jwt/jwt-secret.yaml
+profiles:
+  cloudrun:
+    deploy:
+      kubectl:
+        manifests:
+        - ./knative-manifests/**.yaml
